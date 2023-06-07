@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="content-section">
+        <form action="/login" method="post">
+            {{form.hidden_tag()}}
+            <div class="form-container">
+                <fieldset class="form-group">
+                    <legend>Login Here</legend>
+                    <div class="form-item">
+                        <h4>{{form.username.label(class="form-label")}}</h4>
+                        {% if form.username.errors %}
+                            {{form.username(class="form-control form-control-lg is-invalid detail",placeholder="Username")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.username.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.username(class="form-control form-control-lg detail",placeholder="Username")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.password.label(class="form-label")}}</h4>
+                        {% if form.password.errors %}
+                            {{form.password(class="form-control form-control-lg is-invalid detail",placeholder="Password")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.password.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.password(class="form-control form-control-lg detail",placeholder="Password")}}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <div class="submit">
+                    <button><h3>Login</h3></button>
+                </div>
+                <div class="info">
+                    <h3>Not a student?<a href="{{url_for('register')}}">Register</a></h3>
+                    <h4><a href="{{url_for('reset_request')}}">Forgotten Password?</a></h4>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div>
+        <form method="post" action="/take_exams">
+            {{form.hidden_tag()}}
+            <fieldset class="form-group">
+                <div class="form-control">
+                    1. {{form.question1.label}} <br>
+                    {% if form.question1.errors %}
+                        {{form.question1}}
+                        <div class="invalid-feedback">
+                            {% for error in form.question1.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                    </div>
+                    {% else %}
+                        {{form.question1}}
+                    {% endif %}
+                </div>
+
+                <div class="form-control">
+                    2. {{form.question2.label}} <br>
+                    {% if form.question2.errors %}
+                        {{form.question2}}
+                        <div class="invalid-feedback">
+                            {% for error in form.question2.errors %}
+                                <span>{{error}}</span>
+                            {% endfor %}
+                    </div>
+                    {% else %}
+                        {{form.question2}}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{form.submit(class="btn-outline-info submit")}}
+            </div>
+        </form>
+    </div>
+{% endblock content %} 

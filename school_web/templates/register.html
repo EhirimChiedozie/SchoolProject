@@ -1,0 +1,175 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="content-section">
+        <form action="/register" method="post">
+            {{form.hidden_tag()}}
+            <div class="form-container">
+                <fieldset class="form-group">
+                    <legend>Register Here</legend>
+                    <div class="form-item">
+                        <h4>{{form.surname.label(class="form-label")}}</h4>
+                        {% if form.surname.errors %}
+                            {{form.surname(class="form-control form-control-lg is-invalid detail",placeholder="Surname")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.surname.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.surname(class="form-control form-control-lg detail",placeholder="Surname")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.firstname.label(class="form-label")}}</h4>
+                        {% if form.firstname.errors %}
+                            {{form.firstname(class="form-control form-control-lg is-invalid detail",placeholder="Firstname")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.firstname.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.firstname(class="form-control form-control-lg detail",placeholder="Firstname")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.middlename.label(class="form-label")}}</h4>
+                        {% if form.middlename.errors %}
+                            {{form.middlename(class="form-control form-control-lg is-invalid detail",placeholder="Middlename")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.middlename.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.middlename(class="form-control form-control-lg detail",placeholder="Middlename")}}
+                        {% endif %}
+                    </div><br>
+                    <div class="form-control radio">
+                        <h4>{{form.gender.label}}</h4>
+                        {% if form.gender.errors %}
+                            {{form.gender}}
+                            <div class="invalid-feedback">
+                                {% for error in form.gender.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                        </div>
+                        {% else %}
+                            {{form.gender}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.phonenumber.label(class="form-label")}}</h4>
+                        {% if form.phonenumber.errors %}
+                            {{form.phonenumber(class="form-control form-control-lg is-invalid detail",placeholder="Phonenumber")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.phonenumber.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.phonenumber(class="form-control form-control-lg detail",placeholder="Phonenumber")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.email.label(class="form-label")}}</h4>
+                        {% if form.email.errors %}
+                            {{form.email(class="form-control form-control-lg is-invalid detail",placeholder="Email")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.email(class="form-control form-control-lg detail",placeholder="Email")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.country.label(class="form-label")}}</h4>
+                        {% if form.country.errors %}
+                            {{form.country(class="form-control form-control-lg is-invalid detail",placeholder="Country")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.country.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.country(class="form-control form-control-lg detail",placeholder="Country")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.state.label(class="form-label")}}</h4>
+                        {% if form.state.errors %}
+                            {{form.state(class="form-control form-control-lg is-invalid detail",placeholder="State")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.state.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.state(class="form-control form-control-lg detail",placeholder="State")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.date_of_birth.label(class="form-label")}}</h4>
+                        {% if form.date_of_birth.errors %}
+                            {{form.country(class="form-control form-control-lg is-invalid detail",placeholder="DateOfBirth")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.date_of_birth.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.date_of_birth(class="form-control form-control-lg detail",placeholder="DateOfBirth")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.username.label(class="form-label")}}</h4>
+                        {% if form.username.errors %}
+                            {{form.username(class="form-control form-control-lg is-invalid detail",placeholder="Username")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.username.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.username(class="form-control form-control-lg detail",placeholder="Username")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.password.label(class="form-label")}}</h4>
+                        {% if form.password.errors %}
+                            {{form.password(class="form-control form-control-lg is-invalid detail",placeholder="Password")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.password.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.password(class="form-control form-control-lg detail",placeholder="Password")}}
+                        {% endif %}
+                    </div>
+                    <div class="form-item">
+                        <h4>{{form.confirm_password.label(class="form-label")}}</h4>
+                        {% if form.confirm_password.errors %}
+                            {{form.confirm_password(class="form-control form-control-lg is-invalid detail",placeholder="ConfirmPassword")}}
+                            <div class="invalid-feedback">
+                                {% for error in form.confirm_password.errors %}
+                                    <span>{{error}}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{form.confirm_password(class="form-control form-control-lg detail",placeholder="ConfirmPassword")}}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <div class="submit">
+                    <button><h3>Register</h3></button>
+                </div>
+                <div class="info">
+                    <h3>Already Our Student?<a href="{{url_for('login')}}">Login</a></h3>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
